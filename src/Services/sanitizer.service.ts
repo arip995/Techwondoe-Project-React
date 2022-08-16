@@ -1,4 +1,4 @@
-import { RecievedNavbarData, SanitizenavbarData } from '../Model/Navbar.types';
+import { RecievedNavbarData, SanitizenavbarData } from '../Model/Navbar.type';
 
 const convertNavbarDataToArrayOfObjects = (data: String[]) => {
   var arrayOfobjects: { id: number; value: String }[] = [];
