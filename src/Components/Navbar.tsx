@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-// import { Typography } from '../stories/Components/Typography/Typography';
+import React, { useCallback, useEffect, useState } from 'react';
 import { getNavbarData } from '../Services/api.service';
 import { sanitizenavbarData } from '../Services/sanitizer.service';
 import { SanitizenavbarData } from '../Model/Navbar.types';
@@ -19,13 +18,16 @@ const Navbar = () => {
   };
 
   //Function to show dropdown icon or not
-  const isDropdownIcon = (id: number): boolean => {
-    if (id === 0 || id === 2 || id === 3) {
-      return true;
-    } else {
-      return false;
-    }
-  };
+  const isDropdownIcon = useCallback(
+    (id: number): boolean => {
+      if (id === 0 || id === 2 || id === 3) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    [navbarData]
+  );
 
   //Useeffect hook calls once in the begining
   useEffect(() => {
