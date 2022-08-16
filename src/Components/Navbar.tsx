@@ -1,4 +1,3 @@
-import console from 'console';
 import React, { useEffect } from 'react';
 import { getNavbarData } from '../Services/api.service';
 const Navbar = () => {
