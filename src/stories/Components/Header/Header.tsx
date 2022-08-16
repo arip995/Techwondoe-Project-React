@@ -52,12 +52,12 @@ export const Header = ({
             <span className="welcome">
               Welcome, <b>{user.name}</b>!
             </span>
-            <Button>Log Out</Button>
+            <Button label="log In" />
           </>
         ) : (
           <>
-            <Button>Log In</Button>
-            <Button>Sign In</Button>{' '}
+            <Button label="Log Out" />
+            <Button label="Sign In" />
           </>
         )}
       </div>

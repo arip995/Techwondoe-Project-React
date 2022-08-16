@@ -9,7 +9,7 @@ interface ButtonProps {
   /**
    * Button contents
    */
-  children: string;
+  label: string;
   /**
    * Optional click handler
    */
@@ -26,7 +26,7 @@ interface ButtonProps {
 export const Button = ({
   type = 'primary',
   fontFamily = 'Poppins',
-  children,
+  label,
   ...props
 }: ButtonProps) => {
   const mode =
@@ -43,7 +43,7 @@ export const Button = ({
       className={['storybook-button', mode, font].join(' ')}
       {...props}
     >
-      {children}
+      {label}
     </button>
   );
 };

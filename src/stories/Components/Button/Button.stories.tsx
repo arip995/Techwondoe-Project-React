@@ -5,7 +5,7 @@ import { Button } from './Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
+  title: 'Techwondoe/Button',
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
@@ -20,11 +20,11 @@ export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
   type: 'primary',
-  children: 'Button',
+  label: 'Button',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
   type: 'secondary',
-  children: 'Button',
+  label: 'Button',
 };
