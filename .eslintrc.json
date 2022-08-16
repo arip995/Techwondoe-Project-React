@@ -36,7 +36,6 @@
             {
                 "singleQuote": true,
                 "parser": "flow",
-                "semi": "",
                 "tabWidth": 2
             }
         ]
