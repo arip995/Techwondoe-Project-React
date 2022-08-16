@@ -35,19 +35,16 @@ const Navbar = () => {
   }, []);
   return (
     <div className="bg-[#E5E5E5] flex justify-end w-full px-4 py-2">
-      <div className="flex align-items-center lgb:hidden hover:cursor-pointer xl:w-1/2 xlb:w-2/3 justify-around ">
+      <div className="flex items-center lgb:hidden hover:cursor-pointer xl:w-1/2 xlb:w-2/3 justify-around ">
         {navbarData?.buttonText.map((data) => {
           return (
             <div
               key={data.id}
-              className="font-normal flex text-[#000000]	font-poppins text-base"
+              className="font-normal flex items-center text-[#000000]	font-poppins text-base"
             >
               {data.value}
               {isDropdownIcon(data.id) ? (
-                <img
-                  className="ml-1 h-2 w-2 mt-2"
-                  src={navbarData.dropdownIcon}
-                />
+                <img className="ml-1 h-2 w-2" src={navbarData.dropdownIcon} />
               ) : (
                 <></>
               )}
