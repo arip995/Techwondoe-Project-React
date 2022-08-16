@@ -1,23 +1,31 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { getNavbarData } from '../Services/api.service';
-import { sanitizenavbarData } from '../Services/sanitizer.service';
-import { SanitizenavbarData } from '../Model/Navbar.type';
+import { fetchNavbarData } from '../Services/api.service';
+import { sanitizeNavbarData } from '../Services/sanitizer.service';
+import { NavbarData } from '../Model/Navbar.type';
 
-const Navbar = () => {
-  const [navbarData, setNavbarData] = useState<SanitizenavbarData>();
+export const Navbar = () => {
+  const [navbarData, setNavbarData] = useState<NavbarData>();
 
-  // Function to fetch and sanitize the navbar data
-  const fetchNavbarData = async () => {
-    getNavbarData().then((data: any) => {
-      const sanitizedData: SanitizenavbarData = sanitizenavbarData(
-        data?.items[0]?.fields
-      );
-      setNavbarData(sanitizedData);
-      console.log(navbarData);
-    });
+  /**
+   * Function to fetch and sanitize the navbar data
+   */
+  const getNavbarData = async () => {
+    fetchNavbarData()
+      .then((data: any) => {
+        const sanitizedData: NavbarData = sanitizeNavbarData(
+          data?.items[0]?.fields
+        );
+        setNavbarData(sanitizedData);
+        console.log(navbarData);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
-  //Function to show dropdown icon or not
+  /**
+   * Function to show dropdown icon or not
+   */
   const isDropdownIcon = useCallback(
     (id: number): boolean => {
       if (id === 0 || id === 2 || id === 3) {
@@ -29,9 +37,11 @@ const Navbar = () => {
     [navbarData]
   );
 
-  //Useeffect hook calls once in the begining
+  /**
+   * Useeffect hook calls once in the begining
+   */
   useEffect(() => {
-    fetchNavbarData();
+    getNavbarData();
   }, []);
   return (
     <div className="bg-[#E5E5E5] flex justify-end w-full px-4 py-3">
@@ -52,11 +62,9 @@ const Navbar = () => {
           );
         })}
       </div>
-      <div className="mx-4 my-3 lg:hidden">
+      <div className="hover:cursor-pointer mx-4 my-3 lg:hidden">
         <img src={navbarData?.mobileNavbarIcon} />
       </div>
     </div>
   );
 };
-
-export default Navbar;

@@ -4,7 +4,7 @@ export interface RecievedNavbarData {
   mobileNavbarIcon: any;
 }
 
-export interface SanitizenavbarData {
+export interface NavbarData {
   buttonText: { id: number; value: String }[];
   dropdownIcon: string;
   mobileNavbarIcon: string;

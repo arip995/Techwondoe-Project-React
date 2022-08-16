@@ -1,10 +1,27 @@
 import { Client } from '../Client/client';
-export const getNavbarData = async () => {
+
+/**
+ * Request to get all the data for navbar
+ */
+export const fetchNavbarData = async () => {
   try {
     const response: any = await Client.getEntries({ content_type: 'navbar' });
     return response;
   } catch (error) {
     console.log(error);
-    return [];
+  }
+};
+
+/**
+ * Request to get all the data for navbar
+ */
+export const fetchHeaderImageData = async () => {
+  try {
+    const response: any = await Client.getEntries({
+      content_type: 'headerImage',
+    });
+    return response;
+  } catch (error) {
+    console.log(error);
   }
 };

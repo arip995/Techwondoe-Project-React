@@ -1,5 +1,11 @@
-import { RecievedNavbarData, SanitizenavbarData } from '../Model/Navbar.type';
-
+import { RecievedNavbarData, NavbarData } from '../Model/Navbar.type';
+import {
+  RecievedHeaderImageData,
+  HeaderImageData,
+} from '../Model/HeaderImage.type';
+/**
+ * Convert the array of navbar button texts to object of array
+ */
 const convertNavbarDataToArrayOfObjects = (data: String[]) => {
   var arrayOfobjects: { id: number; value: String }[] = [];
   data.forEach((element, index) => {
@@ -11,9 +17,10 @@ const convertNavbarDataToArrayOfObjects = (data: String[]) => {
   return arrayOfobjects;
 };
 
-export const sanitizenavbarData = (
-  data: RecievedNavbarData
-): SanitizenavbarData => {
+/**
+ * Sanitize the navbar data
+ */
+export const sanitizeNavbarData = (data: RecievedNavbarData): NavbarData => {
   console.log(data);
   var arrayOfobjects = convertNavbarDataToArrayOfObjects(data.buttonText);
   const sanitizedData = {
@@ -23,4 +30,16 @@ export const sanitizenavbarData = (
   };
   // console.log(sanitizedData);
   return sanitizedData;
+};
+
+/**
+ * Sanitize the header image data
+ */
+export const sanitizeHeaderImageData = (
+  data: RecievedHeaderImageData
+): HeaderImageData => {
+  return {
+    headerIcon: data?.headerIcon?.fields?.file?.url,
+    headerImage: data?.headerImage?.fields?.file?.url,
+  };
 };
