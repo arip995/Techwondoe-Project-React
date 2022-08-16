@@ -4,7 +4,7 @@ interface TypographyProps {
   /**
    * Is this the principal call to action on the page?
    */
-  type: 'h1' | 'h2' | 'paragraph';
+  type: 'h1' | 'h2' | 'p1' | 'p2';
   /**
    * paragraph contents
    */
@@ -25,8 +25,10 @@ export const Typography = ({
       return 'storybook-typography--h1';
     } else if (typography === 'h2') {
       return 'storybook-typography--h2';
+    } else if (typography === 'p1') {
+      return 'storybook-typography--p1';
     } else {
-      return 'storybook-typography--paragraph';
+      return 'storybook-typography--p2';
     }
   };
   const mode = calculateMode(type);

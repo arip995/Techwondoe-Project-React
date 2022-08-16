@@ -26,9 +26,16 @@ H2.args = {
   label: 'Lorem ipsum dolor sit amet,',
 };
 
-export const Paragraph = Template.bind({});
+export const P1 = Template.bind({});
 
-Paragraph.args = {
-  type: 'paragraph',
+P1.args = {
+  type: 'p1',
+  label: 'Lorem ipsum dolor sit amet,',
+};
+
+export const P2 = Template.bind({});
+
+P2.args = {
+  type: 'p2',
   label: 'Lorem ipsum dolor sit amet,',
 };
