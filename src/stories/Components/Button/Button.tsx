@@ -5,11 +5,11 @@ interface ButtonProps {
   /**
    * Is this the principal call to action on the page?
    */
-  type?: 'primary' | 'secondary';
+  theme?: 'primary' | 'secondary';
   /**
    * Button contents
    */
-  label: string;
+  label: String;
   /**
    * Optional click handler
    */
@@ -24,13 +24,13 @@ interface ButtonProps {
  * Primary UI component for user interaction
  */
 export const Button = ({
-  type = 'primary',
+  theme = 'primary',
   fontFamily = 'Poppins',
   label,
   ...props
 }: ButtonProps) => {
   const mode =
-    type === 'primary'
+    theme === 'primary'
       ? 'storybook-button--primary'
       : 'storybook-button--secondary';
   const font =
