@@ -34,7 +34,7 @@ const Navbar = () => {
     fetchNavbarData();
   }, []);
   return (
-    <div className="bg-[#E5E5E5] flex justify-end w-full px-4 py-2">
+    <div className="bg-[#E5E5E5] flex justify-end w-full px-4 py-3">
       <div className="flex items-center lgb:hidden hover:cursor-pointer xl:w-1/2 xlb:w-2/3 justify-around ">
         {navbarData?.buttonText.map((data) => {
           return (
