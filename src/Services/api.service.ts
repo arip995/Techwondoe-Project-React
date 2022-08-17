@@ -39,3 +39,17 @@ export const fetchTeamData = async () => {
     console.log(error);
   }
 };
+
+/**
+ * Request to get all the data for CTA
+ */
+export const fetchCta = async () => {
+  try {
+    const response: any = await Client.getEntries({
+      content_type: 'cta',
+    });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};

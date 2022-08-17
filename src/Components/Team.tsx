@@ -17,8 +17,6 @@ export const Team = () => {
           data?.items[0]?.fields
         );
         setTeamData(sanitizedData);
-
-        console.log(sanitizedData);
       })
       .catch((error) => {
         console.log(error);

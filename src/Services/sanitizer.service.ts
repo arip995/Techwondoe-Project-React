@@ -4,6 +4,7 @@ import {
   HeaderImageData,
 } from '../Model/HeaderImage.type';
 import { RecievedTeamData, TeamData } from '../Model/Team.type';
+import { CtaData, RecievedCtaData } from '../Model/Cta.type';
 /**
  * Convert the array of navbar button texts to object of array
  */
@@ -56,6 +57,17 @@ export const sanitizeTeamData = (data: RecievedTeamData): TeamData => {
     icon: data?.icon?.fields?.file?.url,
     image: data?.image?.fields?.file?.url,
     ourTeam: data?.ourTeam,
+    title: data?.title,
+  };
+};
+
+/**
+ * Sanitize the navbar data
+ */
+export const sanitizeCtaData = (data: RecievedCtaData): CtaData => {
+  return {
+    buttonText: data?.buttonText,
+    description: data?.description,
     title: data?.title,
   };
 };

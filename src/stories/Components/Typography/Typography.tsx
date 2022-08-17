@@ -25,6 +25,9 @@ export const Typography = ({
   type,
   className = '',
 }: TypographyProps) => {
+  /**
+   * Calculate the typography
+   */
   const calculateMode = (typography: string) => {
     if (typography === 'h1') {
       return 'storybook-typography--h1';
@@ -37,6 +40,10 @@ export const Typography = ({
     }
   };
   const mode = calculateMode(type);
+
+  /**
+   * Calculate the font family
+   */
   const font =
     fontFamily === 'Poppins'
       ? 'storybook-typography--Poppins'
