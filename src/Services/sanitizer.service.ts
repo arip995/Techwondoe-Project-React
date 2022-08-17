@@ -3,6 +3,7 @@ import {
   RecievedHeaderImageData,
   HeaderImageData,
 } from '../Model/HeaderImage.type';
+import { RecievedTeamData, TeamData } from '../Model/Team.type';
 /**
  * Convert the array of navbar button texts to object of array
  */
@@ -42,5 +43,19 @@ export const sanitizeHeaderImageData = (
     headerIcon: data?.headerIcon?.fields?.file?.url,
     headerImage: data?.headerImage?.fields?.file?.url,
     mobileHeaderIcon: data?.mobileHeaderIcon?.fields?.file?.url,
+  };
+};
+
+/**
+ * Sanitize the navbar data
+ */
+export const sanitizeTeamData = (data: RecievedTeamData): TeamData => {
+  return {
+    buttonText: data?.buttonText,
+    description: data?.description,
+    icon: data?.icon?.fields?.file?.url,
+    image: data?.image?.fields?.file?.url,
+    ourTeam: data?.ourTeam,
+    title: data?.title,
   };
 };

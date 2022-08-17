@@ -8,19 +8,24 @@ interface TypographyProps {
   /**
    * paragraph contents
    */
-  label: String;
+  label: string;
   /**
    * Optional click handler
    */
   fontFamily?: 'Poppins' | 'monospace';
+  /**
+   * Optional styling
+   */
+  className?: string;
 }
 
 export const Typography = ({
   label,
   fontFamily = 'Poppins',
   type,
+  className = '',
 }: TypographyProps) => {
-  const calculateMode = (typography: String) => {
+  const calculateMode = (typography: string) => {
     if (typography === 'h1') {
       return 'storybook-typography--h1';
     } else if (typography === 'h2') {
@@ -36,5 +41,5 @@ export const Typography = ({
     fontFamily === 'Poppins'
       ? 'storybook-typography--Poppins'
       : 'storybook-typography--monospace';
-  return <div className={[mode, font].join(' ')}>{label}</div>;
+  return <div className={[className, mode, font].join(' ')}>{label}</div>;
 };

@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {},
     screens: {
-      xsm: { min: '460px' },
+      xsm: { min: '480px' },
       // => @media (min-width: 640px) { ... }
 
       sm: { min: '640px' },
@@ -31,7 +31,7 @@ module.exports = {
       smb: { max: '639px' },
       // => @media (max-width: 639px) { ... }
 
-      xsmb: { min: '459px' },
+      xsmb: { min: '479px' },
       // => @media (min-width: 640px) { ... }
     },
   },
