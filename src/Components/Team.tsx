@@ -3,6 +3,7 @@ import { fetchTeamData } from '../Services/api.service';
 import { TeamData } from '../Model/Team.type';
 import { sanitizeTeamData } from '../Services/sanitizer.service';
 import { Typography } from '../stories/Components/Typography/Typography';
+import { Button } from '../stories/Components/Button/Button';
 export const Team = () => {
   const [teamData, setTeamData] = useState<TeamData>();
 
@@ -48,6 +49,7 @@ export const Team = () => {
             label={teamData?.description!}
             type="p2"
           />
+          <Button label={teamData?.buttonText!} theme="primary" />
         </div>
       </div>
       <img
