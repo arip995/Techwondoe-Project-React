@@ -31,7 +31,7 @@ module.exports = {
       smb: { max: '639px' },
       // => @media (max-width: 639px) { ... }
 
-      xsmb: { min: '479px' },
+      xsmb: { max: '479px' },
       // => @media (min-width: 640px) { ... }
     },
   },

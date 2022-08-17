@@ -43,11 +43,23 @@ export const fetchTeamData = async () => {
 /**
  * Request to get all the data for CTA
  */
-export const fetchCta = async () => {
+export const fetchCtaData = async () => {
   try {
     const response: any = await Client.getEntries({
       content_type: 'cta',
     });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/**
+ * Request to get all the data for News
+ */
+export const fetchNewsData = async () => {
+  try {
+    const response = await Client.getEntries({ content_type: 'news' });
     return response;
   } catch (error) {
     console.log(error);

@@ -5,6 +5,8 @@ import {
 } from '../Model/HeaderImage.type';
 import { RecievedTeamData, TeamData } from '../Model/Team.type';
 import { CtaData, RecievedCtaData } from '../Model/Cta.type';
+import { NewsData } from '../Model/News.type';
+
 /**
  * Convert the array of navbar button texts to object of array
  */
@@ -20,17 +22,40 @@ const convertNavbarDataToArrayOfObjects = (data: String[]) => {
 };
 
 /**
+ * Convert the array of news to object of array
+ */
+const convertNewsDataToArrayOfObjects = (
+  newsBy: string[],
+  newsDescription: string[],
+  newsImages: any
+) => {
+  var arrayOfobjects: {
+    id: number;
+    newsBy: string;
+    newsDescription: string;
+    newsImages: string;
+  }[] = [];
+  newsBy.forEach((element, index) => {
+    arrayOfobjects.push({
+      id: index,
+      newsBy: element,
+      newsDescription: newsDescription[index],
+      newsImages: newsImages[0]?.fields?.file?.url,
+    });
+  });
+  return arrayOfobjects;
+};
+
+/**
  * Sanitize the navbar data
  */
 export const sanitizeNavbarData = (data: RecievedNavbarData): NavbarData => {
-  console.log(data);
   var arrayOfobjects = convertNavbarDataToArrayOfObjects(data.buttonText);
   const sanitizedData = {
     buttonText: arrayOfobjects,
     dropdownIcon: data.dropdownIcon?.fields?.file.url,
     mobileNavbarIcon: data.mobileNavbarIcon?.fields?.file.url,
   };
-  // console.log(sanitizedData);
   return sanitizedData;
 };
 
@@ -69,5 +94,22 @@ export const sanitizeCtaData = (data: RecievedCtaData): CtaData => {
     buttonText: data?.buttonText,
     description: data?.description,
     title: data?.title,
+  };
+};
+
+/**
+ * Sanitize the News data
+ */
+export const sanitizeNewsData = (data: any): NewsData => {
+  const arrayOfObjects = convertNewsDataToArrayOfObjects(
+    data.newsBy,
+    data.newsDescription,
+    data.newsImages
+  );
+  return {
+    news: arrayOfObjects,
+    buttonText: data?.buttonText,
+    title: data?.title,
+    readMoreIcon: data?.readMoreIcon?.fields?.file?.url,
   };
 };

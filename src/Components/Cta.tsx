@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchCta } from '../Services/api.service';
+import { fetchCtaData } from '../Services/api.service';
 import { CtaData } from '../Model/Cta.type';
 import { sanitizeCtaData } from '../Services/sanitizer.service';
 import { Typography } from '../stories/Components/Typography/Typography';
@@ -11,11 +11,10 @@ export const Cta = () => {
    * Function to fetch and sanitize the Team data
    */
   const getCtaData = () => {
-    fetchCta()
+    fetchCtaData()
       .then((data) => {
         const sanitizedData: CtaData = sanitizeCtaData(data?.items[0]?.fields);
         setCtaData(sanitizedData);
-        console.log(ctaData);
       })
       .catch((error) => {
         console.log(error);
