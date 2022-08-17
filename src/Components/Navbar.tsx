@@ -16,7 +16,7 @@ export const Navbar = () => {
           data?.items[0]?.fields
         );
         setNavbarData(sanitizedData);
-        console.log(navbarData);
+        // console.log(navbarData);
       })
       .catch((error) => {
         console.log(error);

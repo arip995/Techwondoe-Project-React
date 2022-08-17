@@ -25,3 +25,17 @@ export const fetchHeaderImageData = async () => {
     console.log(error);
   }
 };
+
+/**
+ * Request to get all the data for navbar
+ */
+export const fetchTeamData = async () => {
+  try {
+    const response: any = await Client.getEntries({
+      content_type: 'team',
+    });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
