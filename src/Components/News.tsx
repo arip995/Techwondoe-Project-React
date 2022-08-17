@@ -40,11 +40,6 @@ export const News = () => {
               type="h1"
               label={newsData?.title!}
             />
-            {/* <Typography
-              className="sm:hidden text-[#111012]"
-              type="h2"
-              label={newsData?.title!}
-            /> */}
             <Button className="smb:hidden" label={newsData?.buttonText[0]!} />
             <Button
               className="sm:hidden"
@@ -79,7 +74,7 @@ export const News = () => {
                       type="p1"
                       label={newsData?.buttonText[1]}
                     />
-                    <img src={newsData?.readMoreIcon} className="" />
+                    <img src={newsData?.readMoreIcon} className="mt-[4px]" />
                   </div>
                 </div>
               );
