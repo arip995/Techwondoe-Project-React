@@ -42,7 +42,7 @@ export const HeaderImage = () => {
       />
       <img
         style={{ width: '-webkit-fill-available' }}
-        className="sm:hidden absolute text-5xl text-white top-0 right-0"
+        className="xsm:hidden absolute text-5xl text-white top-0 right-0"
         src={imageData?.mobileHeaderIcon}
       />
       <div className="w-full lg:hidden text-3xl text-[#ffffff] absolute top-1/2 bottom-1/2 text-center">
