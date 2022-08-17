@@ -23,6 +23,11 @@ export const WhyChooseUs = () => {
 
   useEffect(() => {
     getWhyChooseUsData();
+    /**
+     * Clean up code
+     */
+    const abortController = new AbortController();
+    return () => abortController.abort();
   }, []);
   return (
     <div className="w-full flex justify-center bg-[#E5E5E5]">

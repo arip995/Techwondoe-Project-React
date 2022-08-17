@@ -29,6 +29,11 @@ export const News = () => {
    */
   useEffect(() => {
     getNewsdata();
+    /**
+     * Clean up code
+     */
+    const abortController = new AbortController();
+    return () => abortController.abort();
   }, []);
   return (
     <div>

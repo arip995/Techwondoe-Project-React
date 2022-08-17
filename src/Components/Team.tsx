@@ -28,6 +28,11 @@ export const Team = () => {
    */
   useEffect(() => {
     getTeamData();
+    /**
+     * Clean up code
+     */
+    const abortController = new AbortController();
+    return () => abortController.abort();
   }, []);
 
   return (

@@ -26,6 +26,12 @@ export const Cta = () => {
    */
   useEffect(() => {
     getCtaData();
+
+    /**
+     * Clean up code
+     */
+    const abortController = new AbortController();
+    return () => abortController.abort();
   }, []);
   return (
     <div className="w-full flex justify-center items-center bg-[#E6692E]">

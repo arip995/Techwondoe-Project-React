@@ -27,6 +27,11 @@ export const HeaderImage = () => {
    */
   useEffect(() => {
     getHeaderImageData();
+    /**
+     * Clean up code
+     */
+    const abortController = new AbortController();
+    return () => abortController.abort();
   }, []);
 
   return (

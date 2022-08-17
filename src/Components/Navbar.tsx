@@ -42,6 +42,11 @@ export const Navbar = () => {
    */
   useEffect(() => {
     getNavbarData();
+    /**
+     * Clean up code
+     */
+    const abortController = new AbortController();
+    return () => abortController.abort();
   }, []);
   return (
     <div className="bg-[#E5E5E5] flex justify-end w-full px-4 py-3">
