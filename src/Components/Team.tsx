@@ -54,7 +54,7 @@ export const Team = () => {
       </div>
       <img
         style={{ height: '-webkit-fill-available' }}
-        className="lgb:hidden absolute left-0 -top-0 object-cover"
+        className="xlb:hidden absolute left-0 -top-24"
         src={teamData?.icon}
       />
     </div>
