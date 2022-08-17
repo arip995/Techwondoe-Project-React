@@ -41,5 +41,6 @@ export const sanitizeHeaderImageData = (
   return {
     headerIcon: data?.headerIcon?.fields?.file?.url,
     headerImage: data?.headerImage?.fields?.file?.url,
+    mobileHeaderIcon: data?.mobileHeaderIcon?.fields?.file?.url,
   };
 };

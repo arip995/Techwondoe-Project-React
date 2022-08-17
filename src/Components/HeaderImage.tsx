@@ -30,11 +30,22 @@ export const HeaderImage = () => {
   }, []);
 
   return (
-    <div className="w-full overflow-x-hidden overflow-y-hidden">
+    <div className="w-full relative overflow-x-hidden overflow-y-hidden">
       <img
-        className="object-contain w-full min-w-full"
+        className="lgb:h-96 object-cover w-full min-w-full"
         src={imageData?.headerImage}
       />
+      <img
+        className="lgb:hidden object-cover absolute text-5xl text-white top-0 right-0"
+        src={imageData?.headerIcon}
+      />
+      <img
+        className="lg:hidden absolute text-5xl text-white top-0 right-0"
+        src={imageData?.mobileHeaderIcon}
+      />
+      <div className="w-full lg:hidden text-3xl text-[#ffffff] absolute top-1/2 bottom-1/2 text-center">
+        Take the leap with us
+      </div>
     </div>
   );
 };
