@@ -5,13 +5,17 @@ import {
 } from '../Model/HeaderImage.type';
 import { RecievedTeamData, TeamData } from '../Model/Team.type';
 import { CtaData, RecievedCtaData } from '../Model/Cta.type';
-import { NewsData } from '../Model/News.type';
+import { NewsData, RecievedNewsData } from '../Model/News.type';
+import {
+  RecievedWhyChooseUsData,
+  WhyChooseUsData,
+} from '../Model/WhyChooseUs.type';
 
 /**
  * Convert the array of navbar button texts to object of array
  */
-const convertNavbarDataToArrayOfObjects = (data: String[]) => {
-  var arrayOfobjects: { id: number; value: String }[] = [];
+const convertDataToArrayOfObjects = (data: string[]) => {
+  var arrayOfobjects: { id: number; value: string }[] = [];
   data.forEach((element, index) => {
     arrayOfobjects.push({
       id: index,
@@ -50,7 +54,7 @@ const convertNewsDataToArrayOfObjects = (
  * Sanitize the navbar data
  */
 export const sanitizeNavbarData = (data: RecievedNavbarData): NavbarData => {
-  var arrayOfobjects = convertNavbarDataToArrayOfObjects(data.buttonText);
+  var arrayOfobjects = convertDataToArrayOfObjects(data.buttonText);
   const sanitizedData = {
     buttonText: arrayOfobjects,
     dropdownIcon: data.dropdownIcon?.fields?.file.url,
@@ -100,7 +104,7 @@ export const sanitizeCtaData = (data: RecievedCtaData): CtaData => {
 /**
  * Sanitize the News data
  */
-export const sanitizeNewsData = (data: any): NewsData => {
+export const sanitizeNewsData = (data: RecievedNewsData): NewsData => {
   const arrayOfObjects = convertNewsDataToArrayOfObjects(
     data.newsBy,
     data.newsDescription,
@@ -111,5 +115,21 @@ export const sanitizeNewsData = (data: any): NewsData => {
     buttonText: data?.buttonText,
     title: data?.title,
     readMoreIcon: data?.readMoreIcon?.fields?.file?.url,
+  };
+};
+
+/**
+ * Sanitize the WhyChooseUs data
+ */
+export const sanitizeWhyChooseUsData = (
+  data: RecievedWhyChooseUsData
+): WhyChooseUsData => {
+  var arrayOfobjects = convertDataToArrayOfObjects(data.contents);
+  return {
+    contents: arrayOfobjects,
+    contentDescription: data?.contentDescription,
+    description: data?.description,
+    title: data?.title,
+    tickIcon: data?.tickIcon?.fields?.file?.url,
   };
 };

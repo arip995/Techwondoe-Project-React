@@ -13,7 +13,7 @@ export const News = () => {
    */
   const getNewsdata = () => {
     fetchNewsData()
-      .then((data) => {
+      .then((data: any) => {
         const sanitizedData: NewsData = sanitizeNewsData(
           data?.items[0]?.fields
         );
@@ -36,15 +36,15 @@ export const News = () => {
         <div className="lg:py-24 py-16 lg:w-2/3 w-full px-3">
           <div className="mb-6 flex justify-between items-center">
             <Typography
-              className="smb:hidden text-[#111012]"
+              className="text-[#111012]"
               type="h1"
               label={newsData?.title!}
             />
-            <Typography
+            {/* <Typography
               className="sm:hidden text-[#111012]"
               type="h2"
               label={newsData?.title!}
-            />
+            /> */}
             <Button className="smb:hidden" label={newsData?.buttonText[0]!} />
             <Button
               className="sm:hidden"
@@ -73,7 +73,7 @@ export const News = () => {
                     className="text-[#111012]"
                     label={element?.newsDescription}
                   />
-                  <div className="flex gap-1 items-center hover:cursor-pointer mt-12">
+                  <div className="flex gap-1 items-center hover:cursor-pointer mt-10">
                     <Typography
                       className="text-[#E6692E]"
                       type="p1"

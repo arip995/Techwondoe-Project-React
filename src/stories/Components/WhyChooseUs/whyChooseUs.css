@@ -1,7 +1,6 @@
 .flex {
   display: flex;
   align-items: flex-start;
-  max-width: 260px;
 }
 
 .text-left {
@@ -13,9 +12,15 @@
 }
 
 .mt-2 {
- margin-top: 0.27rem;
+ margin-top: 0.47rem;
 }
 
 .ml-2 {
   margin-left: 0.3rem;
+}
+
+@media only screen and (max-width: 640px) {
+  .flex {
+    min-width: 300px;
+  }
 }

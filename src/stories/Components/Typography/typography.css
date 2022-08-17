@@ -14,7 +14,7 @@
 .storybook-typography--h2 {
   font-style: normal;
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   line-height: 30px;
 }
 
@@ -32,10 +32,19 @@
   line-height: 150%;
 }
 
-.storybook-typography--Poppins {
-  font-family: poppins;
-}
+/* .storybook-typography--poppins {
+  font-family: Poppins;
+} */
 
 .storybook-typography--monospace {
   font-family: monospace;
+}
+
+@media only screen and (max-width: 768px) {
+  .storybook-typography--h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.7rem;
+    line-height: 40px;
+  }
 }

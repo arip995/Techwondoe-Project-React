@@ -25,7 +25,7 @@ interface WhyChooseUsProps {
   iconUrl: string;
 }
 
-export const WhyChooseUs = ({
+export const WhyChoose = ({
   headinglabel,
   headingType,
   paragraphLabel,

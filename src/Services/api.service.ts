@@ -65,3 +65,15 @@ export const fetchNewsData = async () => {
     console.log(error);
   }
 };
+
+/**
+ * Request to get all the data for News
+ */
+export const fetchWhyChooseUsData = async () => {
+  try {
+    const response = await Client.getEntries({ content_type: 'whyChooseUs' });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};

@@ -1,11 +1,11 @@
 export interface RecievedNavbarData {
-  buttonText: String[];
+  buttonText: string[];
   dropdownIcon: any;
   mobileNavbarIcon: any;
 }
 
 export interface NavbarData {
-  buttonText: { id: number; value: String }[];
+  buttonText: { id: number; value: string }[];
   dropdownIcon: string;
   mobileNavbarIcon: string;
 }
