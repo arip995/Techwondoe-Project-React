@@ -35,7 +35,7 @@ export const WhyChooseUs = ({
   return (
     <div className="flex">
       <img src={iconUrl} className="mt-2" />
-      <div className="text-left ml-3">
+      <div className="text-left ml-2">
         <Typography className="mb-3" type={headingType} label={headinglabel} />
         <Typography
           className="mb-3"
