@@ -37,7 +37,7 @@ export const HeaderImage = () => {
       />
       <img
         style={{ height: '-webkit-fill-available' }}
-        className="lgb:hidden object-cover absolute text-5xl text-white top-0 right-0"
+        className="xlb:hidden object-cover absolute text-5xl text-white top-0 right-0"
         src={imageData?.headerIcon}
       />
       <img
