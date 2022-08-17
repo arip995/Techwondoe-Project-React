@@ -12,7 +12,7 @@ interface TypographyProps {
   /**
    * Optional click handler
    */
-  fontFamily?: 'Poppins' | 'monospace';
+  fontFamily?: 'poppins' | 'monospace';
   /**
    * Optional styling
    */
@@ -21,7 +21,7 @@ interface TypographyProps {
 
 export const Typography = ({
   label,
-  fontFamily = 'Poppins',
+  fontFamily = 'poppins',
   type,
   className = '',
 }: TypographyProps) => {
@@ -45,7 +45,7 @@ export const Typography = ({
    * Calculate the font family
    */
   const font =
-    fontFamily === 'Poppins'
+    fontFamily === 'poppins'
       ? 'storybook-typography--Poppins'
       : 'storybook-typography--monospace';
   return <div className={[className, mode, font].join(' ')}>{label}</div>;

@@ -15,7 +15,7 @@ interface ButtonProps {
    */
   className?: string;
   /**
-   * Optional click handler
+   * Optional font family
    */
   fontFamily?: 'Poppins' | 'monospace';
   /**
