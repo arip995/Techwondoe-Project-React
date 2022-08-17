@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {},
     screens: {
-      sm: { min: '640px' },
+      sm: { min: '530px' },
       // => @media (min-width: 640px) { ... }
 
       md: { min: '768px' },
@@ -25,7 +25,7 @@ module.exports = {
       mdb: { max: '767px' },
       // => @media (max-width: 767px) { ... }
 
-      smb: { max: '639px' },
+      smb: { max: '529px' },
       // => @media (max-width: 639px) { ... }
     },
   },

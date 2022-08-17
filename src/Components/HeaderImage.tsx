@@ -36,11 +36,13 @@ export const HeaderImage = () => {
         src={imageData?.headerImage}
       />
       <img
+        style={{ height: '-webkit-fill-available' }}
         className="lgb:hidden object-cover absolute text-5xl text-white top-0 right-0"
         src={imageData?.headerIcon}
       />
       <img
-        className="lg:hidden absolute text-5xl text-white top-0 right-0"
+        style={{ width: '-webkit-fill-available' }}
+        className="sm:hidden absolute text-5xl text-white top-0 right-0"
         src={imageData?.mobileHeaderIcon}
       />
       <div className="w-full lg:hidden text-3xl text-[#ffffff] absolute top-1/2 bottom-1/2 text-center">
