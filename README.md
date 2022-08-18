@@ -15,6 +15,7 @@
 # Additional 
 1. Used api and sanitize service for maintainability.
 2. Used only pure components
+3. Customized tailwind for media queries
 # Link to the hosted page
 https://techwondoeproject.herokuapp.com/
 
@@ -36,9 +37,9 @@ Open [http://localhost:3000] to view it in the browser.
 5. Push the changes to heroku
 
 ### Commands
-1. heroku create -a <project name>
-2. git init 
-3. heroku git:remote -a <project name>
-4. heroku buildpacks:set mars/create-react-app 
-5. git commit -am "my commit" 
-6. git push heroku main
+1. `heroku create -a <project name>`
+2. `git init`
+3. `heroku git:remote -a <project name>`
+4. `heroku buildpacks:set mars/create-react-app` 
+5. `git commit -m "my commit" `
+6. `git push heroku main`
