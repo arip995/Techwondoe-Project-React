@@ -1,20 +1,17 @@
-.flexs {
+.wrapper {
   display: flex;
   align-items: flex-start;
 }
 
-.text-left {
+.content {
   text-align: left;
+  margin-left: 0.3rem;
 }
 
-.mb-3 {
+.child {
   margin-bottom: 0.5rem;
 }
 
-.mt-2 {
+.image {
  margin-top: 0.47rem;
-}
-
-.ml-2 {
-  margin-left: 0.3rem;
 }

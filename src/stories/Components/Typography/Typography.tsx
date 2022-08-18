@@ -19,7 +19,7 @@ interface TypographyProps {
   className?: string;
 }
 
-export const Typography = ({
+const Typography = ({
   label,
   fontFamily = 'Poppins',
   type,
@@ -50,3 +50,4 @@ export const Typography = ({
       : 'storybook-typography--monospace';
   return <div className={[className, mode, font].join(' ')}>{label}</div>;
 };
+export default React.memo(Typography);

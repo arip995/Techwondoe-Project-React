@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchNewsData } from '../Services/api.service';
 import { sanitizeNewsData } from '../Services/sanitizer.service';
 import { NewsData } from '../Models/News.type';
-import { Typography } from '../stories/Components/Typography/Typography';
+import Typography from '../stories/Components/Typography/Typography';
 import { Button } from '../stories/Components/Button/Button';
 
 export const News = () => {

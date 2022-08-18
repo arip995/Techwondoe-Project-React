@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { fetchFooterData } from '../Services/api.service';
 import { sanitizeFooterData } from '../Services/sanitizer.service';
 import { FooterData } from '../Models/Footer.type';
-import { Typography } from '../stories/Components/Typography/Typography';
+import Typography from '../stories/Components/Typography/Typography';
 
 export const Footer = () => {
   const [footerData, setFooterData] = React.useState<FooterData>();

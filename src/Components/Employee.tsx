@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { fetchEmployeeData } from '../Services/api.service';
 import { sanitizeEmployeeData } from '../Services/sanitizer.service';
 import { EmployeeData } from '../Models/Employee.type';
-import { Typography } from '../stories/Components/Typography/Typography';
+import Typography from '../stories/Components/Typography/Typography';
 
 export const Employee = () => {
   const [employeeData, setEmployeeData] = React.useState<EmployeeData>();

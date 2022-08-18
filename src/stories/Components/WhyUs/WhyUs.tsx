@@ -1,6 +1,6 @@
 import React from 'react';
-import { Typography } from '../Typography/Typography';
 import './whyUs.css';
+import Typography from '../Typography/Typography';
 
 interface WhyChooseUsProps {
   /**
@@ -33,12 +33,12 @@ export const WhyUs = ({
   iconUrl,
 }: WhyChooseUsProps) => {
   return (
-    <div className="flexs">
-      <img src={iconUrl} className="mt-2" />
-      <div className="text-left ml-2">
-        <Typography className="mb-3" type={headingType} label={headinglabel} />
+    <div className="wrapper">
+      <img src={iconUrl} className="image" />
+      <div className="content">
+        <Typography className="child" type={headingType} label={headinglabel} />
         <Typography
-          className="mb-3"
+          className="child"
           type={paragraphType}
           label={paragraphLabel}
         />
