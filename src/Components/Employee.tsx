@@ -4,7 +4,7 @@ import { sanitizeEmployeeData } from '../Services/sanitizer.service';
 import { EmployeeData } from '../Models/Employee.type';
 import Typography from '../stories/Components/Typography/Typography';
 
-export const Employee = () => {
+const Employee = () => {
   const [employeeData, setEmployeeData] = React.useState<EmployeeData>();
 
   /**
@@ -66,3 +66,5 @@ export const Employee = () => {
     </div>
   );
 };
+
+export default React.memo(Employee);

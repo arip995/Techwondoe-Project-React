@@ -3,8 +3,9 @@ import { fetchTeamData } from '../Services/api.service';
 import { TeamData } from '../Models/Team.type';
 import { sanitizeTeamData } from '../Services/sanitizer.service';
 import Typography from '../stories/Components/Typography/Typography';
-import { Button } from '../stories/Components/Button/Button';
-export const Team = () => {
+import Button from '../stories/Components/Button/Button';
+
+const Team = () => {
   const [teamData, setTeamData] = useState<TeamData>();
 
   /**
@@ -63,3 +64,5 @@ export const Team = () => {
     </div>
   );
 };
+
+export default React.memo(Team);

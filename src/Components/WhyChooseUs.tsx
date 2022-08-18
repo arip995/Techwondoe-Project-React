@@ -3,9 +3,9 @@ import { fetchWhyChooseUsData } from '../Services/api.service';
 import { sanitizeWhyChooseUsData } from '../Services/sanitizer.service';
 import { WhyChooseUsData } from '../Models/WhyChooseUs.type';
 import Typography from '../stories/Components/Typography/Typography';
-import { WhyUs } from '../stories/Components/WhyUs/WhyUs';
+import WhyUs from '../stories/Components/WhyUs/WhyUs';
 
-export const WhyChooseUs = () => {
+const WhyChooseUs = () => {
   const [whyData, setWhyData] = useState<WhyChooseUsData>();
 
   /**
@@ -65,3 +65,5 @@ export const WhyChooseUs = () => {
     </div>
   );
 };
+
+export default React.memo(WhyChooseUs);

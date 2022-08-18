@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { WhyUs } from './WhyUs';
+import WhyUs from './WhyUs';
 
 export default {
   title: 'Techwondoe/WhyUs',

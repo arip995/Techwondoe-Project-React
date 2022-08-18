@@ -3,8 +3,9 @@ import { fetchCtaData } from '../Services/api.service';
 import { CtaData } from '../Models/Cta.type';
 import { sanitizeCtaData } from '../Services/sanitizer.service';
 import Typography from '../stories/Components/Typography/Typography';
-import { Button } from '../stories/Components/Button/Button';
-export const Cta = () => {
+import Button from '../stories/Components/Button/Button';
+
+const Cta = () => {
   const [ctaData, setCtaData] = useState<CtaData>();
 
   /**
@@ -51,3 +52,5 @@ export const Cta = () => {
     </div>
   );
 };
+
+export default React.memo(Cta);

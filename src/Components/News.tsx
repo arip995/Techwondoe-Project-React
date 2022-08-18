@@ -3,9 +3,9 @@ import { fetchNewsData } from '../Services/api.service';
 import { sanitizeNewsData } from '../Services/sanitizer.service';
 import { NewsData } from '../Models/News.type';
 import Typography from '../stories/Components/Typography/Typography';
-import { Button } from '../stories/Components/Button/Button';
+import Button from '../stories/Components/Button/Button';
 
-export const News = () => {
+const News = () => {
   const [newsData, setNewsData] = useState<NewsData>();
 
   /**
@@ -90,3 +90,5 @@ export const News = () => {
     </div>
   );
 };
+
+export default React.memo(News);

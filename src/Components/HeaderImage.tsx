@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { fetchHeaderImageData } from '../Services/api.service';
 import { sanitizeHeaderImageData } from '../Services/sanitizer.service';
 import { HeaderImageData } from '../Models/HeaderImage.type';
-export const HeaderImage = () => {
+
+const HeaderImage = () => {
   const [imageData, setImageData] = useState<HeaderImageData>();
 
   /**
@@ -58,3 +59,5 @@ export const HeaderImage = () => {
     </div>
   );
 };
+
+export default React.memo(HeaderImage);

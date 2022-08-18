@@ -25,7 +25,7 @@ interface WhyChooseUsProps {
   iconUrl: string;
 }
 
-export const WhyUs = ({
+const WhyUs = ({
   headinglabel,
   headingType,
   paragraphLabel,
@@ -46,3 +46,4 @@ export const WhyUs = ({
     </div>
   );
 };
+export default React.memo(WhyUs);

@@ -14,6 +14,7 @@
 13. Readme file on how to deploy and run the service.
 # Additional 
 1. Used api and sanitize service for maintainability.
+2. Used only pure components
 # Link to the hosted page
 https://techwondoeproject.herokuapp.com/
 

@@ -27,7 +27,7 @@ interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({
+const Button = ({
   theme = 'primary',
   fontFamily = 'Poppins',
   label,
@@ -52,3 +52,4 @@ export const Button = ({
     </button>
   );
 };
+export default React.memo(Button);
