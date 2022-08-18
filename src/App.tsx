@@ -7,7 +7,7 @@ import News from './Components/News';
 import WhyChooseUs from './Components/WhyChooseUs';
 import Employee from './Components/Employee';
 import Footer from './Components/Footer';
-function App() {
+const App = () => {
   return (
     <div>
       <Navbar />
@@ -20,6 +20,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
-export default App;
+export default React.memo(App);
