@@ -5,6 +5,7 @@ https://techwondoeproject.herokuapp.com/
 1. Clone the repository.
 2. open the terminal inside the directory.
 3. Run command `npm install` to install all the dependencies.
+5. Install prettier and eslint in the code editor
 4. Run `yarn storybook` to  run storybook in the development mode.
 Open [http://localhost:6006/] to view it in the browser.
 5. Run `npm start` to  run the app in the development mode.
