@@ -37,7 +37,7 @@ const Footer = () => {
   }, []);
   return (
     <div className="w-full">
-      <div className="md:flex md:flex-row-reverse	bg-[#ffffff] mdb:px-4 w-full md:py-24 py-12">
+      <div className="md:flex md:flex-row-reverse	bg-[#E5E5E5] mdb:px-4 w-full md:py-24 py-12">
         <div className="items-baseline flex flex-wrap lgb:justify-around justify-center items-center md:w-2/3 w-full gap-12">
           {footerData?.lines.map((element: any, index: number) => {
             return (
@@ -67,7 +67,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#E5E5E5] py-4 flex justify-center">
+      <div className="bg-[#EDEDED] py-4 flex justify-center">
         <Typography label={footerData?.copyrightText!} type="p2" />
       </div>
     </div>
