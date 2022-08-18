@@ -11,14 +11,16 @@ const Footer = () => {
    * Function to fetch and sanitize the Team data
    */
   const getFooterData = () => {
-    fetchFooterData().then((data: any) => {
-      const sanitizedData: FooterData = sanitizeFooterData(
-        data?.items[0]?.fields
-      );
-      setFooterData(sanitizedData);
-      console.log(sanitizedData);
-      console.log(footerData);
-    });
+    fetchFooterData()
+      .then((data: any) => {
+        const sanitizedData: FooterData = sanitizeFooterData(
+          data?.items[0]?.fields
+        );
+        setFooterData(sanitizedData);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   /**

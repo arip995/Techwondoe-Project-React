@@ -16,7 +16,6 @@ const HeaderImage = () => {
           data?.items[0]?.fields
         );
         setImageData(sanitizedData);
-        // console.log(sanitizedData);
       })
       .catch((error) => {
         console.log(error);

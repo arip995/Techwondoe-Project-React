@@ -11,12 +11,16 @@ const Employee = () => {
    * Function to fetch and sanitize the Employee data
    */
   const getEmployeeData = () => {
-    fetchEmployeeData().then((data: any) => {
-      const sanitizedData: EmployeeData = sanitizeEmployeeData(
-        data?.items[0]?.fields
-      );
-      setEmployeeData(sanitizedData);
-    });
+    fetchEmployeeData()
+      .then((data: any) => {
+        const sanitizedData: EmployeeData = sanitizeEmployeeData(
+          data?.items[0]?.fields
+        );
+        setEmployeeData(sanitizedData);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   /**
