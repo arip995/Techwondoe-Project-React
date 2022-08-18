@@ -3,7 +3,7 @@ import { fetchWhyChooseUsData } from '../Services/api.service';
 import { sanitizeWhyChooseUsData } from '../Services/sanitizer.service';
 import { WhyChooseUsData } from '../Models/WhyChooseUs.type';
 import { Typography } from '../stories/Components/Typography/Typography';
-import { WhyChoose } from '../stories/Components/WhyChooseUs/WhyChooseUs';
+import { WhyUs } from '../stories/Components/WhyUs/WhyUs';
 
 export const WhyChooseUs = () => {
   const [whyData, setWhyData] = useState<WhyChooseUsData>();
@@ -50,7 +50,7 @@ export const WhyChooseUs = () => {
           {whyData?.contents.map((elements) => {
             return (
               <div key={elements.id} className="sm:w-[307px] w-full">
-                <WhyChoose
+                <WhyUs
                   iconUrl={whyData.tickIcon}
                   headinglabel={elements.value!}
                   headingType="h2"

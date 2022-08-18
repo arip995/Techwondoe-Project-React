@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography } from '../Typography/Typography';
-import './whyChooseUs.css';
+import './whyUs.css';
 
 interface WhyChooseUsProps {
   /**
@@ -25,7 +25,7 @@ interface WhyChooseUsProps {
   iconUrl: string;
 }
 
-export const WhyChoose = ({
+export const WhyUs = ({
   headinglabel,
   headingType,
   paragraphLabel,
