@@ -4,23 +4,23 @@ import './whyChooseUs.css';
 
 interface WhyChooseUsProps {
   /**
-   * Is this the principal call to action on the page?
+   * Heading text
    */
   headinglabel: string;
   /**
-   * Optional font family
+   * Heading type
    */
   headingType: 'h1' | 'h2';
   /**
-   * Optional font family
+   * Paragraph label
    */
   paragraphLabel: string;
   /**
-   * Optional font family
+   * Paragraph type
    */
   paragraphType: 'p1' | 'p2';
   /**
-   * Optional font family
+   * Icon url
    */
   iconUrl: string;
 }

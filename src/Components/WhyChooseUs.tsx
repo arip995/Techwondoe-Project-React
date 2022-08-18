@@ -7,6 +7,10 @@ import { WhyChoose } from '../stories/Components/WhyChooseUs/WhyChooseUs';
 
 export const WhyChooseUs = () => {
   const [whyData, setWhyData] = useState<WhyChooseUsData>();
+
+  /**
+   * Function to fetch and sanitize the Team data
+   */
   const getWhyChooseUsData = () => {
     fetchWhyChooseUsData()
       .then((data: any) => {
@@ -20,6 +24,9 @@ export const WhyChooseUs = () => {
       });
   };
 
+  /**
+   * Useeffect hook calls once in the begining
+   */
   useEffect(() => {
     getWhyChooseUsData();
     /**

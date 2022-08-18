@@ -6,6 +6,10 @@ import { Typography } from '../stories/Components/Typography/Typography';
 
 export const Footer = () => {
   const [footerData, setFooterData] = React.useState<FooterData>();
+
+  /**
+   * Function to fetch and sanitize the Team data
+   */
   const getFooterData = () => {
     fetchFooterData().then((data: any) => {
       const sanitizedData: FooterData = sanitizeFooterData(
@@ -17,8 +21,17 @@ export const Footer = () => {
     });
   };
 
+  /**
+   * Useeffect hook calls once in the begining
+   */
   useEffect(() => {
     getFooterData();
+
+    /**
+     * Clean up code
+     */
+    const abortController = new AbortController();
+    return () => abortController.abort();
   }, []);
   return (
     <div className="w-full">
