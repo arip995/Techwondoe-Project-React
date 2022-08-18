@@ -4,7 +4,7 @@ import { HeaderImage } from './Components/HeaderImage';
 import { Team } from './Components/Team';
 import { Cta } from './Components/Cta';
 import { News } from './Components/News';
-// import { WhyChooseUs } from './Components/WhyChooseUs';
+import { WhyChooseUs } from './Components/WhyChooseUs';
 import { Employee } from './Components/Employee';
 import { Footer } from './Components/Footer';
 function App() {
@@ -12,7 +12,7 @@ function App() {
     <div>
       <Navbar />
       <HeaderImage />
-      {/* <WhyChooseUs /> */}
+      <WhyChooseUs />
       <Team />
       <News />
       <Employee />

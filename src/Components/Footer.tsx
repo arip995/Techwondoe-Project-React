@@ -23,7 +23,7 @@ export const Footer = () => {
   return (
     <div className="w-full">
       <div className="md:flex md:flex-row-reverse	bg-[#E5E5E5] mdb:px-4 w-full md:py-24 py-12">
-        <div className="flex flex-wrap lgb:justify-around justify-center items-center md:w-2/3 w-full gap-12">
+        <div className="items-baseline flex flex-wrap lgb:justify-around justify-center items-center md:w-2/3 w-full gap-12">
           {footerData?.lines.map((element: any, index: number) => {
             return (
               <div key={element.id} className="">
@@ -41,7 +41,13 @@ export const Footer = () => {
         <div className="md:w-1/3 w-full flex md:justify-center md:items-end mdb:justify-end mdb:mt-8">
           <div className="flex gap-5">
             {footerData?.socialMediaIcons.map((icon: any) => {
-              return <img key={icon.id} src={icon.value} className="" />;
+              return (
+                <img
+                  key={icon.id}
+                  src={icon.value}
+                  className="hover:cursor-pointer"
+                />
+              );
             })}
           </div>
         </div>

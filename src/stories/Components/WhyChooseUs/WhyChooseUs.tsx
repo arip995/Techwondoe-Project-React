@@ -33,7 +33,7 @@ export const WhyChoose = ({
   iconUrl,
 }: WhyChooseUsProps) => {
   return (
-    <div className="flex">
+    <div className="flexs">
       <img src={iconUrl} className="mt-2" />
       <div className="text-left ml-2">
         <Typography className="mb-3" type={headingType} label={headinglabel} />

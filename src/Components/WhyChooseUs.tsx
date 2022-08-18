@@ -42,7 +42,7 @@ export const WhyChooseUs = () => {
         <div className="w-full flex flex-wrap gap-5 justify-between">
           {whyData?.contents.map((elements) => {
             return (
-              <div key={elements.id} className="xsm:w-[307px] w-full">
+              <div key={elements.id} className="sm:w-[307px] w-full">
                 <WhyChoose
                   iconUrl={whyData.tickIcon}
                   headinglabel={elements.value!}
