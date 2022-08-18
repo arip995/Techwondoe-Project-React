@@ -12,6 +12,8 @@
 11. Prettier and Linter configuration
 12. Host the page on Netlify, Vercel or another provider.
 13. Readme file on how to deploy and run the service.
+# Additional 
+1. Used api and sanitize service for maintainability.
 # Link to the hosted page
 https://techwondoeproject.herokuapp.com/
 
