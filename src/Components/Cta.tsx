@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchCtaData } from '../Services/api.service';
-import { CtaData } from '../Model/Cta.type';
+import { CtaData } from '../Models/Cta.type';
 import { sanitizeCtaData } from '../Services/sanitizer.service';
 import { Typography } from '../stories/Components/Typography/Typography';
 import { Button } from '../stories/Components/Button/Button';

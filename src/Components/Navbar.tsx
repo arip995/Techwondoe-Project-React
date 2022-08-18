@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { fetchNavbarData } from '../Services/api.service';
 import { sanitizeNavbarData } from '../Services/sanitizer.service';
-import { NavbarData } from '../Model/Navbar.type';
+import { NavbarData } from '../Models/Navbar.type';
 
 export const Navbar = () => {
   const [navbarData, setNavbarData] = useState<NavbarData>();

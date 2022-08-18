@@ -1,3 +1,17 @@
+# Checklist(All the below requirements are done)
+1. Each section of the homepage must be a separate react component.
+2. Must develop using Typescript 
+3. Must use tailwindcss
+4. No hardcoding of text in react app. All the content (text and images) must be coming from a Headless CMS through its API 
+5. Enable theming with just 2 colors i.e primary and secondary and font family
+6. Create Typography components for H1, H2, and Paragraph
+7. Use Storybook for 3 UI components 
+8. Button - Primary and secondary
+9. Typography - H1, H2, Paragraph
+10. Sub-component of the Why Choose us section with icon, title and paragraph.
+11. Prettier and Linter configuration
+12. Host the page on Netlify, Vercel or another provider.
+13. Readme file on how to deploy and run the service.
 # Link to the hosted page
 https://techwondoeproject.herokuapp.com/
 

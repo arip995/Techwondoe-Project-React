@@ -1,17 +1,17 @@
-import { RecievedNavbarData, NavbarData } from '../Model/Navbar.type';
+import { RecievedNavbarData, NavbarData } from '../Models/Navbar.type';
 import {
   RecievedHeaderImageData,
   HeaderImageData,
-} from '../Model/HeaderImage.type';
-import { RecievedTeamData, TeamData } from '../Model/Team.type';
-import { CtaData, RecievedCtaData } from '../Model/Cta.type';
-import { NewsData, RecievedNewsData } from '../Model/News.type';
+} from '../Models/HeaderImage.type';
+import { RecievedTeamData, TeamData } from '../Models/Team.type';
+import { CtaData, RecievedCtaData } from '../Models/Cta.type';
+import { NewsData, RecievedNewsData } from '../Models/News.type';
 import {
   RecievedWhyChooseUsData,
   WhyChooseUsData,
-} from '../Model/WhyChooseUs.type';
-import { RecievedEmployeeData, EmployeeData } from '../Model/Employee.type';
-import { RecievedFooterData, FooterData } from '../Model/Footer.type';
+} from '../Models/WhyChooseUs.type';
+import { RecievedEmployeeData, EmployeeData } from '../Models/Employee.type';
+import { RecievedFooterData, FooterData } from '../Models/Footer.type';
 
 /**
  * Convert the array of navbar button texts to object of array

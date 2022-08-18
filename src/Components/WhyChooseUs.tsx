@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchWhyChooseUsData } from '../Services/api.service';
 import { sanitizeWhyChooseUsData } from '../Services/sanitizer.service';
-import { WhyChooseUsData } from '../Model/WhyChooseUs.type';
+import { WhyChooseUsData } from '../Models/WhyChooseUs.type';
 import { Typography } from '../stories/Components/Typography/Typography';
 import { WhyChoose } from '../stories/Components/WhyChooseUs/WhyChooseUs';
 

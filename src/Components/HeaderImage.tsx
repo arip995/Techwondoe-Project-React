@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { fetchHeaderImageData } from '../Services/api.service';
 import { sanitizeHeaderImageData } from '../Services/sanitizer.service';
-import { HeaderImageData } from '../Model/HeaderImage.type';
+import { HeaderImageData } from '../Models/HeaderImage.type';
 export const HeaderImage = () => {
   const [imageData, setImageData] = useState<HeaderImageData>();
 
