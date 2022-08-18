@@ -14,7 +14,6 @@ export const WhyChooseUs = () => {
           data?.items[0]?.fields
         );
         setWhyData(sanitizedData);
-        console.log(whyData);
       })
       .catch((err) => {
         console.log(err);
@@ -43,7 +42,7 @@ export const WhyChooseUs = () => {
         <div className="w-full flex flex-wrap gap-5 justify-between">
           {whyData?.contents.map((elements) => {
             return (
-              <div key={elements.id} className="xsm:w-[307px]">
+              <div key={elements.id} className="xsm:w-[307px] w-full">
                 <WhyChoose
                   iconUrl={whyData.tickIcon}
                   headinglabel={elements.value!}

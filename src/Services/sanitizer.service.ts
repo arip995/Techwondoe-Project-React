@@ -10,6 +10,8 @@ import {
   RecievedWhyChooseUsData,
   WhyChooseUsData,
 } from '../Model/WhyChooseUs.type';
+import { RecievedEmployeeData, EmployeeData } from '../Model/Employee.type';
+// import { RecievedEmployeeData } from '../Model/Employee.type';
 
 /**
  * Convert the array of navbar button texts to object of array
@@ -26,7 +28,7 @@ const convertDataToArrayOfObjects = (data: string[]) => {
 };
 
 /**
- * Convert the array of news to object of array
+ * Convert the array of news to array of objects
  */
 const convertNewsDataToArrayOfObjects = (
   newsBy: string[],
@@ -45,6 +47,31 @@ const convertNewsDataToArrayOfObjects = (
       newsBy: element,
       newsDescription: newsDescription[index],
       newsImages: newsImages[0]?.fields?.file?.url,
+    });
+  });
+  return arrayOfobjects;
+};
+
+/**
+ * Convert the array of Employee to array of objects
+ */
+const convertDataToEmployeeArrayOfObjects = (
+  customIcons: any,
+  description: any,
+  title: string[]
+) => {
+  var arrayOfobjects: {
+    id: number;
+    customIcons: string;
+    description: string;
+    title: string;
+  }[] = [];
+  description.map((element: string, index: number) => {
+    arrayOfobjects.push({
+      id: index,
+      customIcons: customIcons[index].fields.file.url,
+      description: element,
+      title: title[index],
     });
   });
   return arrayOfobjects;
@@ -131,5 +158,23 @@ export const sanitizeWhyChooseUsData = (
     description: data?.description,
     title: data?.title,
     tickIcon: data?.tickIcon?.fields?.file?.url,
+  };
+};
+
+/**
+ * Sanitize the Employee data
+ */
+export const sanitizeEmployeeData = (
+  data: RecievedEmployeeData
+): EmployeeData => {
+  var arrayOfobjects = convertDataToEmployeeArrayOfObjects(
+    data.customIcons,
+    data.description,
+    data.title
+  );
+  return {
+    content: arrayOfobjects,
+    buttonText: data?.buttonText,
+    backgroundIcon: data?.backgroundIcon?.fields?.file?.url,
   };
 };

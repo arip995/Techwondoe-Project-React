@@ -77,3 +77,17 @@ export const fetchWhyChooseUsData = async () => {
     console.log(error);
   }
 };
+
+/**
+ * Request to get all the data for News
+ */
+export const fetchEmployeeData = async () => {
+  try {
+    const response = await Client.getEntries({
+      content_type: 'employeeAndCandidates',
+    });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};

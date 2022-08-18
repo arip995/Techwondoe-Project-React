@@ -18,9 +18,3 @@
 .ml-2 {
   margin-left: 0.3rem;
 }
-
-@media only screen and (max-width: 640px) {
-  .flex {
-    min-width: 300px;
-  }
-}
