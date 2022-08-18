@@ -6,7 +6,7 @@ import { Cta } from './Components/Cta';
 import { News } from './Components/News';
 // import { WhyChooseUs } from './Components/WhyChooseUs';
 import { Employee } from './Components/Employee';
-
+import { Footer } from './Components/Footer';
 function App() {
   return (
     <div>
@@ -17,6 +17,7 @@ function App() {
       <News />
       <Employee />
       <Cta />
+      <Footer />
     </div>
   );
 }

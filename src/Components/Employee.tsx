@@ -16,7 +16,6 @@ export const Employee = () => {
         data?.items[0]?.fields
       );
       setEmployeeData(sanitizedData);
-      console.log(sanitizedData);
     });
   };
 

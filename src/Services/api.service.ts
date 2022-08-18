@@ -79,12 +79,26 @@ export const fetchWhyChooseUsData = async () => {
 };
 
 /**
- * Request to get all the data for News
+ * Request to get all the data for Employee
  */
 export const fetchEmployeeData = async () => {
   try {
     const response = await Client.getEntries({
       content_type: 'employeeAndCandidates',
+    });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+/**
+ * Request to get all the data for Footer
+ */
+export const fetchFooterData = async () => {
+  try {
+    const response = await Client.getEntries({
+      content_type: 'footer',
     });
     return response;
   } catch (error) {

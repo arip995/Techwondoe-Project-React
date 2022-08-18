@@ -11,12 +11,12 @@ import {
   WhyChooseUsData,
 } from '../Model/WhyChooseUs.type';
 import { RecievedEmployeeData, EmployeeData } from '../Model/Employee.type';
-// import { RecievedEmployeeData } from '../Model/Employee.type';
+import { RecievedFooterData, FooterData } from '../Model/Footer.type';
 
 /**
  * Convert the array of navbar button texts to object of array
  */
-const convertDataToArrayOfObjects = (data: string[]) => {
+const convertDataToArrayOfObjects = (data: any[]) => {
   var arrayOfobjects: { id: number; value: string }[] = [];
   data.forEach((element, index) => {
     arrayOfobjects.push({
@@ -176,5 +176,24 @@ export const sanitizeEmployeeData = (
     content: arrayOfobjects,
     buttonText: data?.buttonText,
     backgroundIcon: data?.backgroundIcon?.fields?.file?.url,
+  };
+};
+
+/**
+ * Sanitize the Footer data
+ */
+export const sanitizeFooterData = (data: RecievedFooterData): FooterData => {
+  const line1 = convertDataToArrayOfObjects(data.line1);
+  const line2 = convertDataToArrayOfObjects(data.line2);
+  const line4 = convertDataToArrayOfObjects(data.line4);
+  const line5 = convertDataToArrayOfObjects(data.line5);
+  return {
+    lines: convertDataToArrayOfObjects([line1, line2, line4, line5]),
+    socialMediaIcons: convertDataToArrayOfObjects([
+      data.socialMediaIcons[0].fields.file.url,
+      data.socialMediaIcons[1].fields.file.url,
+      data.socialMediaIcons[2].fields.file.url,
+    ]),
+    copyrightText: data?.copyrightText,
   };
 };
