@@ -4,44 +4,26 @@ import Typography from '../Typography/Typography';
 
 interface WhyChooseUsProps {
   /**
-   * Heading text
+   * Title text
    */
-  headinglabel: string;
-  /**
-   * Heading type
-   */
-  headingType: 'h1' | 'h2';
-  /**
-   * Paragraph label
-   */
-  paragraphLabel: string;
+  title: string;
   /**
    * Paragraph type
    */
-  paragraphType: 'p1' | 'p2';
+  paragraph: string;
   /**
    * Icon url
    */
   iconUrl: string;
 }
 
-const WhyUs = ({
-  headinglabel,
-  headingType,
-  paragraphLabel,
-  paragraphType,
-  iconUrl,
-}: WhyChooseUsProps) => {
+const WhyUs = ({ title, paragraph, iconUrl }: WhyChooseUsProps) => {
   return (
     <div className="wrapper">
       <img src={iconUrl} className="image" />
       <div className="content">
-        <Typography className="child" type={headingType} label={headinglabel} />
-        <Typography
-          className="child"
-          type={paragraphType}
-          label={paragraphLabel}
-        />
+        <Typography className="child" type="h2" label={title} />
+        <Typography className="child" type="p2" label={paragraph} />
       </div>
     </div>
   );

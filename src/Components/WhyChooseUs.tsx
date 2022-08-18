@@ -52,10 +52,8 @@ const WhyChooseUs = () => {
               <div key={elements.id} className="sm:w-[307px] w-full">
                 <WhyUs
                   iconUrl={whyData.tickIcon}
-                  headinglabel={elements.value!}
-                  headingType="h2"
-                  paragraphLabel={whyData.contentDescription!}
-                  paragraphType="p2"
+                  title={elements.value!}
+                  paragraph={whyData.contentDescription!}
                 />
               </div>
             );
