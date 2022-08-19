@@ -29,7 +29,7 @@ Open [http://localhost:6006/] to view it in the browser.
 5. Run `npm start` to  run the app in the development mode.
 Open [http://localhost:3000] to view it in the browser.
 
-### heroku with heroku
+### Host with heroku
 1. Create an account on heroku 
 2. Create a new project in heroku 
 3. Install and login with heroku CLI 
