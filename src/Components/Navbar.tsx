@@ -58,7 +58,7 @@ const Navbar = () => {
             >
               {data.value}
               {isDropdownIcon(data.id) ? (
-                <img className="ml-1" src={navbarData.dropdownIcon} />
+                <img className="ml-2 mt-1" src={navbarData.dropdownIcon} />
               ) : (
                 <></>
               )}
