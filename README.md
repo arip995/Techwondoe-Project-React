@@ -1,4 +1,4 @@
-# Checklist(All the below requirements are done)
+### Checklist(All the below requirements are done)
 1. Each section of the homepage must be a separate react component.
 2. Must develop using Typescript 
 3. Must use tailwindcss
@@ -12,14 +12,15 @@
 11. Prettier and Linter configuration
 12. Host the page on Netlify, Vercel or another provider.
 13. Readme file on how to deploy and run the service.
-# Additional 
+### Additional 
 1. Used api and sanitize service for maintainability.
 2. Used only pure components
 3. Customized tailwind for media queries
-# Link to the hosted page
+4. Created custom hook for fetching api
+### Link to the hosted page
 https://techwondoeproject.herokuapp.com/
 
-# Run the application in local
+### Run the application in local
 1. Clone the repository.
 2. open the terminal inside the directory.
 3. Run command `npm install` to install all the dependencies.
