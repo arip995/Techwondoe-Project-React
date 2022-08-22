@@ -14,7 +14,7 @@ import { RecievedEmployeeData, EmployeeData } from '../Models/Employee.type';
 import { RecievedFooterData, FooterData } from '../Models/Footer.type';
 
 /**
- * Convert the array of navbar button texts to object of array
+ * Convert array to object of array
  */
 const convertDataToArrayOfObjects = (data: any[]) => {
   var arrayOfobjects: { id: number; value: string }[] = [];
@@ -104,7 +104,7 @@ export const sanitizeHeaderImageData = (
 };
 
 /**
- * Sanitize the navbar data
+ * Sanitize the team data
  */
 export const sanitizeTeamData = (data: RecievedTeamData): TeamData => {
   return {
@@ -118,7 +118,7 @@ export const sanitizeTeamData = (data: RecievedTeamData): TeamData => {
 };
 
 /**
- * Sanitize the navbar data
+ * Sanitize the cta data
  */
 export const sanitizeCtaData = (data: RecievedCtaData): CtaData => {
   return {
