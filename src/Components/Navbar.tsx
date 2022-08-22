@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { fetchNavbarData } from '../Services/api.service';
+import { fetchData } from '../Services/api.service';
 import { sanitizeNavbarData } from '../Services/sanitizer.service';
 import { NavbarData } from '../Models/Navbar.type';
 
@@ -10,7 +10,7 @@ const Navbar = () => {
    * Function to fetch and sanitize the navbar data
    */
   const getNavbarData = async () => {
-    fetchNavbarData()
+    fetchData('navbar')
       .then((data: any) => {
         const sanitizedData: NavbarData = sanitizeNavbarData(
           data?.items[0]?.fields

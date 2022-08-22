@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchHeaderImageData } from '../Services/api.service';
+import { fetchData } from '../Services/api.service';
 import { sanitizeHeaderImageData } from '../Services/sanitizer.service';
 import { HeaderImageData } from '../Models/HeaderImage.type';
 
@@ -10,7 +10,7 @@ const HeaderImage = () => {
    * Function to fetch and sanitize the header image data
    */
   const getHeaderImageData = () => {
-    fetchHeaderImageData()
+    fetchData('headerImage')
       .then((data) => {
         const sanitizedData: HeaderImageData = sanitizeHeaderImageData(
           data?.items[0]?.fields

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { fetchFooterData } from '../Services/api.service';
+import { fetchData } from '../Services/api.service';
 import { sanitizeFooterData } from '../Services/sanitizer.service';
 import { FooterData } from '../Models/Footer.type';
 import Typography from '../stories/Components/Typography/Typography';
@@ -11,7 +11,7 @@ const Footer = () => {
    * Function to fetch and sanitize the Team data
    */
   const getFooterData = () => {
-    fetchFooterData()
+    fetchData('footer')
       .then((data: any) => {
         const sanitizedData: FooterData = sanitizeFooterData(
           data?.items[0]?.fields

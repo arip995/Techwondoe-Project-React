@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { fetchEmployeeData } from '../Services/api.service';
+import { fetchData } from '../Services/api.service';
 import { sanitizeEmployeeData } from '../Services/sanitizer.service';
 import { EmployeeData } from '../Models/Employee.type';
 import Typography from '../stories/Components/Typography/Typography';
@@ -11,7 +11,7 @@ const Employee = () => {
    * Function to fetch and sanitize the Employee data
    */
   const getEmployeeData = () => {
-    fetchEmployeeData()
+    fetchData('employeeAndCandidates')
       .then((data: any) => {
         const sanitizedData: EmployeeData = sanitizeEmployeeData(
           data?.items[0]?.fields

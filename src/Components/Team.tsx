@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchTeamData } from '../Services/api.service';
+import { fetchData } from '../Services/api.service';
 import { TeamData } from '../Models/Team.type';
 import { sanitizeTeamData } from '../Services/sanitizer.service';
 import Typography from '../stories/Components/Typography/Typography';
@@ -12,7 +12,7 @@ const Team = () => {
    * Function to fetch and sanitize the Team data
    */
   const getTeamData = () => {
-    fetchTeamData()
+    fetchData('team')
       .then((data) => {
         const sanitizedData: TeamData = sanitizeTeamData(
           data?.items[0]?.fields
