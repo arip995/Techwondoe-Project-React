@@ -1,7 +1,7 @@
 import { Client } from '../Client/client';
 
 /**
- * handle all the api calls
+ * Handle all the api calls
  */
 export const fetchData = async (content_type: string) => {
   try {
