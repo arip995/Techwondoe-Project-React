@@ -11,15 +11,15 @@ export const useFetch = (content_type: string) => {
         const response: any = await Client.getEntries({
           content_type: content_type,
         });
-        const data = response;
-
-        setApiData(data);
+        response.then((data: any) => {
+          setApiData(data);
+        });
       } catch (error) {
         console.log(error);
       }
     };
 
     fetchData();
-  }, [content_type]);
+  });
   return apiData;
 };

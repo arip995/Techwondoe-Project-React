@@ -7,7 +7,6 @@ import News from './Components/News';
 import WhyChooseUs from './Components/WhyChooseUs';
 import Employee from './Components/Employee';
 import Footer from './Components/Footer';
-import TryCustomHook from './Components/TryCustomHook';
 
 const App = () => {
   return (
@@ -20,7 +19,6 @@ const App = () => {
       <Employee />
       <Cta />
       <Footer />
-      <TryCustomHook />
     </div>
   );
 };
