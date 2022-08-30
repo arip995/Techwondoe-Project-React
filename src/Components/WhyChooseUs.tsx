@@ -7,7 +7,6 @@ import WhyUs from '../stories/Components/WhyUs/WhyUs';
 
 const WhyChooseUs = () => {
   const [whyData, setWhyData] = useState<WhyChooseUsData>();
-
   /**
    * Function to fetch and sanitize the Team data
    */
