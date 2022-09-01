@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { setCacheData } from '../Services/setCache.service';
+import { getCacheData } from '../Services/getCache.service';
 import { fetchData } from '../Services/api.service';
 import { TeamData } from '../Models/Team.type';
 import { sanitizeTeamData } from '../Services/sanitizer.service';
@@ -17,6 +19,7 @@ const Team = () => {
         const sanitizedData: TeamData = sanitizeTeamData(
           data?.items[0]?.fields
         );
+        setCacheData('team', sanitizedData, 86400000);
         setTeamData(sanitizedData);
       })
       .catch((error) => {
@@ -28,7 +31,13 @@ const Team = () => {
    * Useeffect hook calls once in the begining
    */
   useEffect(() => {
-    getTeamData();
+    var cachedData = getCacheData('team');
+    if (cachedData) {
+      setTeamData(cachedData);
+    } else {
+      getTeamData();
+    }
+
     /**
      * Clean up code
      */

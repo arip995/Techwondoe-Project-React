@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { setCacheData } from '../Services/setCache.service';
+import { getCacheData } from '../Services/getCache.service';
 import { fetchData } from '../Services/api.service';
 import { sanitizeNewsData } from '../Services/sanitizer.service';
 import { NewsData } from '../Models/News.type';
@@ -17,6 +19,7 @@ const News = () => {
         const sanitizedData: NewsData = sanitizeNewsData(
           data?.items[0]?.fields
         );
+        setCacheData('news', sanitizedData, 86400000);
         setNewsData(sanitizedData);
       })
       .catch((error) => {
@@ -28,7 +31,12 @@ const News = () => {
    * Useeffect hook calls once in the begining
    */
   useEffect(() => {
-    getNewsdata();
+    var cachedData = getCacheData('news');
+    if (cachedData) {
+      setNewsData(cachedData);
+    } else {
+      getNewsdata();
+    }
     /**
      * Clean up code
      */

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { setCacheData } from '../Services/setCache.service';
+import { getCacheData } from '../Services/getCache.service';
 import { fetchData } from '../Services/api.service';
 import { sanitizeHeaderImageData } from '../Services/sanitizer.service';
 import { HeaderImageData } from '../Models/HeaderImage.type';
@@ -15,6 +17,7 @@ const HeaderImage = () => {
         const sanitizedData: HeaderImageData = sanitizeHeaderImageData(
           data?.items[0]?.fields
         );
+        setCacheData('headerImage', sanitizedData, 86400000);
         setImageData(sanitizedData);
       })
       .catch((error) => {
@@ -26,7 +29,12 @@ const HeaderImage = () => {
    * Useeffect hook calls once in the begining
    */
   useEffect(() => {
-    getHeaderImageData();
+    var cachedData = getCacheData('headerImage');
+    if (cachedData) {
+      setImageData(cachedData);
+    } else {
+      getHeaderImageData();
+    }
     /**
      * Clean up code
      */

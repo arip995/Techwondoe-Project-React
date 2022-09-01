@@ -1,4 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { setCacheData } from '../Services/setCache.service';
+import { getCacheData } from '../Services/getCache.service';
 import { fetchData } from '../Services/api.service';
 import { sanitizeNavbarData } from '../Services/sanitizer.service';
 import { NavbarData } from '../Models/Navbar.type';
@@ -15,6 +17,7 @@ const Navbar = () => {
         const sanitizedData: NavbarData = sanitizeNavbarData(
           data?.items[0]?.fields
         );
+        setCacheData('navbar', sanitizedData, 86400000);
         setNavbarData(sanitizedData);
       })
       .catch((error) => {
@@ -40,7 +43,12 @@ const Navbar = () => {
    * Useeffect hook calls once in the begining
    */
   useEffect(() => {
-    getNavbarData();
+    var cachedData = getCacheData('navbar');
+    if (cachedData) {
+      setNavbarData(cachedData);
+    } else {
+      getNavbarData();
+    }
     /**
      * Clean up code
      */

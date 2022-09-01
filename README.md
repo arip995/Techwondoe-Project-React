@@ -13,10 +13,11 @@
 12. Host the page on Netlify, Vercel or another provider.
 13. Readme file on how to deploy and run the service.
 ### Additional 
-1. Used api and sanitize service for maintainability.
-2. Used only pure components
-3. Customized tailwind for media queries
-4. Created custom hook for fetching api
+1. Implemented caching
+2. Used api and sanitize service for maintainability.
+3. Used only pure components
+4. Customized tailwind for media queries
+5. Created custom hook for fetching api
 ### Link to the hosted page
 https://techwondoeproject.herokuapp.com/
 

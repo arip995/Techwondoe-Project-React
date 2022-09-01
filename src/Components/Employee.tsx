@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { fetchData } from '../Services/api.service';
 import { sanitizeEmployeeData } from '../Services/sanitizer.service';
 import { EmployeeData } from '../Models/Employee.type';
+import { setCacheData } from '../Services/setCache.service';
+import { getCacheData } from '../Services/getCache.service';
 import Typography from '../stories/Components/Typography/Typography';
 
 const Employee = () => {
@@ -13,9 +15,11 @@ const Employee = () => {
   const getEmployeeData = () => {
     fetchData('employeeAndCandidates')
       .then((data: any) => {
+        // console.log(data);
         const sanitizedData: EmployeeData = sanitizeEmployeeData(
           data?.items[0]?.fields
         );
+        setCacheData('employeeAndCandidates', sanitizedData, 86400000);
         setEmployeeData(sanitizedData);
       })
       .catch((error) => {
@@ -27,7 +31,12 @@ const Employee = () => {
    * Useeffect hook calls once in the begining
    */
   useEffect(() => {
-    getEmployeeData();
+    var cachedData = getCacheData('employeeAndCandidates');
+    if (cachedData) {
+      setEmployeeData(cachedData);
+    } else {
+      getEmployeeData();
+    }
 
     /**
      * Clean up code

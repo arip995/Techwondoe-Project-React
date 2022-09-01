@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { setCacheData } from '../Services/setCache.service';
+import { getCacheData } from '../Services/getCache.service';
 import { fetchData } from '../Services/api.service';
 import { sanitizeWhyChooseUsData } from '../Services/sanitizer.service';
 import { WhyChooseUsData } from '../Models/WhyChooseUs.type';
@@ -16,6 +18,7 @@ const WhyChooseUs = () => {
         const sanitizedData: WhyChooseUsData = sanitizeWhyChooseUsData(
           data?.items[0]?.fields
         );
+        setCacheData('whyChooseUs', sanitizedData, 86400000);
         setWhyData(sanitizedData);
       })
       .catch((err) => {
@@ -27,7 +30,12 @@ const WhyChooseUs = () => {
    * Useeffect hook calls once in the begining
    */
   useEffect(() => {
-    getWhyChooseUsData();
+    var cachedData = getCacheData('whyChooseUs');
+    if (cachedData) {
+      setWhyData(cachedData);
+    } else {
+      getWhyChooseUsData();
+    }
     /**
      * Clean up code
      */

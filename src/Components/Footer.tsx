@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { setCacheData } from '../Services/setCache.service';
+import { getCacheData } from '../Services/getCache.service';
 import { fetchData } from '../Services/api.service';
 import { sanitizeFooterData } from '../Services/sanitizer.service';
 import { FooterData } from '../Models/Footer.type';
@@ -16,6 +18,7 @@ const Footer = () => {
         const sanitizedData: FooterData = sanitizeFooterData(
           data?.items[0]?.fields
         );
+        setCacheData('footer', sanitizedData, 86400000);
         setFooterData(sanitizedData);
       })
       .catch((error) => {
@@ -27,7 +30,12 @@ const Footer = () => {
    * Useeffect hook calls once in the begining
    */
   useEffect(() => {
-    getFooterData();
+    var cachedData = getCacheData('footer');
+    if (cachedData) {
+      setFooterData(cachedData);
+    } else {
+      getFooterData();
+    }
 
     /**
      * Clean up code
