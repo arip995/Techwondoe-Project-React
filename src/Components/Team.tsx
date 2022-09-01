@@ -31,7 +31,7 @@ const Team = () => {
    * Useeffect hook calls once in the begining
    */
   useEffect(() => {
-    var cachedData = getCacheData('team');
+    var cachedData: TeamData | null = getCacheData('team');
     if (cachedData) {
       setTeamData(cachedData);
     } else {

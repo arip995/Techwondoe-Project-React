@@ -30,7 +30,7 @@ const Footer = () => {
    * Useeffect hook calls once in the begining
    */
   useEffect(() => {
-    var cachedData = getCacheData('footer');
+    var cachedData: FooterData | null = getCacheData('footer');
     if (cachedData) {
       setFooterData(cachedData);
     } else {

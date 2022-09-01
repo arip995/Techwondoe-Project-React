@@ -30,7 +30,7 @@ const WhyChooseUs = () => {
    * Useeffect hook calls once in the begining
    */
   useEffect(() => {
-    var cachedData = getCacheData('whyChooseUs');
+    var cachedData: WhyChooseUsData | null = getCacheData('whyChooseUs');
     if (cachedData) {
       setWhyData(cachedData);
     } else {

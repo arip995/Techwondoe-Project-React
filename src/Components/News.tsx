@@ -31,7 +31,7 @@ const News = () => {
    * Useeffect hook calls once in the begining
    */
   useEffect(() => {
-    var cachedData = getCacheData('news');
+    var cachedData: NewsData | null = getCacheData('news');
     if (cachedData) {
       setNewsData(cachedData);
     } else {

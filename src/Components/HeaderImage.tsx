@@ -29,7 +29,7 @@ const HeaderImage = () => {
    * Useeffect hook calls once in the begining
    */
   useEffect(() => {
-    var cachedData = getCacheData('headerImage');
+    var cachedData: HeaderImageData | null = getCacheData('headerImage');
     if (cachedData) {
       setImageData(cachedData);
     } else {

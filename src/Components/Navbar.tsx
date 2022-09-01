@@ -43,7 +43,7 @@ const Navbar = () => {
    * Useeffect hook calls once in the begining
    */
   useEffect(() => {
-    var cachedData = getCacheData('navbar');
+    var cachedData: NavbarData | null = getCacheData('navbar');
     if (cachedData) {
       setNavbarData(cachedData);
     } else {

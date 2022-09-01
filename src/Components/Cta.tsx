@@ -29,7 +29,7 @@ const Cta = () => {
    * Useeffect hook calls once in the begining
    */
   useEffect(() => {
-    var cachedData = getCacheData('cta');
+    var cachedData: CtaData | null = getCacheData('cta');
     if (cachedData) {
       setCtaData(cachedData);
     } else {

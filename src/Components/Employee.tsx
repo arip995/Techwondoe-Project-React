@@ -31,7 +31,7 @@ const Employee = () => {
    * Useeffect hook calls once in the begining
    */
   useEffect(() => {
-    var cachedData = getCacheData('employeeAndCandidates');
+    var cachedData: EmployeeData | null = getCacheData('employeeAndCandidates');
     if (cachedData) {
       setEmployeeData(cachedData);
     } else {
