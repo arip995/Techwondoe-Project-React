@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { setCacheData } from '../Services/setCache.service';
-import { getCacheData } from '../Services/getCache.service';
+import { setCacheData, getCacheData } from '../Services/cache.service';
 import { fetchData } from '../Services/api.service';
 import { sanitizeFooterData } from '../Services/sanitizer.service';
 import { FooterData } from '../Models/Footer.type';

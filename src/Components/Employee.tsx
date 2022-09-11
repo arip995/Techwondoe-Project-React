@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import { fetchData } from '../Services/api.service';
 import { sanitizeEmployeeData } from '../Services/sanitizer.service';
 import { EmployeeData } from '../Models/Employee.type';
-import { setCacheData } from '../Services/setCache.service';
-import { getCacheData } from '../Services/getCache.service';
+import { setCacheData, getCacheData } from '../Services/cache.service';
 import Typography from '../stories/Components/Typography/Typography';
 
 const Employee = () => {

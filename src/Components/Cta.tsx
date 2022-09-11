@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchData } from '../Services/api.service';
 import { CtaData } from '../Models/Cta.type';
 import { sanitizeCtaData } from '../Services/sanitizer.service';
-import { setCacheData } from '../Services/setCache.service';
-import { getCacheData } from '../Services/getCache.service';
+import { setCacheData, getCacheData } from '../Services/cache.service';
 import Typography from '../stories/Components/Typography/Typography';
 import Button from '../stories/Components/Button/Button';
 

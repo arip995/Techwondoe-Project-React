@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { setCacheData } from '../Services/setCache.service';
-import { getCacheData } from '../Services/getCache.service';
+import { setCacheData, getCacheData } from '../Services/cache.service';
 import { fetchData } from '../Services/api.service';
 import { sanitizeNavbarData } from '../Services/sanitizer.service';
 import { NavbarData } from '../Models/Navbar.type';
