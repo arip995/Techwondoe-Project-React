@@ -19,7 +19,7 @@
 4. Customized tailwind for media queries
 5. Created custom hook for fetching api
 ### Link to the hosted page
-https://techwondoeproject.herokuapp.com/
+https://ephemeral-daifuku-49ebeb.netlify.app
 
 ### Run the application in local
 1. Clone the repository.
